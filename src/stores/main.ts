@@ -10,7 +10,42 @@ export const useMainStore = defineStore('counter', () => {
   })*/
   const classes: Ref<{[key: string]: string[][]}> = ref(JSON.parse(localStorage.getItem("classes")?localStorage.getItem("classes")!:`
   {
-    "6A": [["Moi I", "Moi II", "Moi III", "Moi de trop", "Moi"], ["Toi I", "Toi II", "Toi III"]],
+    "6A": [
+      [
+        "Georgine",
+        "Eulalie",
+        "Hercule",
+        "Mignon",
+        "Julien",
+        "Vivien",
+        "Absolon",
+        "Gérard",
+        "Anselme",
+        "Jeannot",
+        "Marcellin",
+        "Eugène",
+        "Ouida",
+        "Nathalie",
+        "Lisette"
+      ],
+      [
+        "Clémence",
+        "Gisèle",
+        "Gaëtane",
+        "Clément",
+        "Toussaint",
+        "Perceval",
+        "Rosine",
+        "Paschal",
+        "Anastasie",
+        "Odette",
+        "Arnaud",
+        "Jacinthe",
+        "Cerise",
+        "Suzette",
+        "Berthe"
+      ]
+    ],
     "6B": [["La", "class"], ["des", "6", "B"]]
   }
   `) as {[key: string]: string[][]})

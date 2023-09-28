@@ -13,7 +13,7 @@ const mainStore = useMainStore()
         <button @click="mainStore.generateTeams()" style="margin-bottom: var(--spacing); width: 100%;">Génerer les équipes</button>
     </header>
     <div style="display: flex; flex-direction: row; gap: 6px; flex-wrap: wrap;">
-        <Input />
+        <Input style="flex-shrink: 1; flex-grow: 1;" />
         <TeamsViewer />
     </div>
 </template>

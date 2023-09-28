@@ -22,14 +22,14 @@ function listToString(list: string[]) {
             {{ classKey }}
         </option>
         </select>
-        <button @click="mainStore.deleteClass(mainStore.currentClass)" v-show="mainStore.canDeleteClass(mainStore.currentClass)">Supprimer la classe</button>
+        <button @click="mainStore.deleteClass(mainStore.currentClass)" :disabled="!mainStore.canDeleteClass(mainStore.currentClass)">Supprimer la classe</button>
 
-        <div style="display: flex; flex-direction: row; gap: var(--spacing); flex-wrap: wrap;">
-            <textarea style="min-width: 175px; width: 0; flex-grow: 1;" v-for="students, i of mainStore.students" :value="listToString(mainStore.students[i])" @input="mainStore.students[i] = stringToList(($event.target as HTMLInputElement).value)" ></textarea>
+        <div style="display: flex; flex-direction: row; gap: var(--spacing); flex-wrap: wrap; width: 100%;">
+            <textarea style="height: 325px; flex-grow: 1; width: 150px;" v-for="students, i of mainStore.students" :value="listToString(mainStore.students[i])" @input="mainStore.students[i] = stringToList(($event.target as HTMLInputElement).value)" ></textarea>
         </div>
 
-        <input type="text" v-model="savingClassKey" placeholder="Nom de la classe" style="max-width: 125px;"/>
-        <button @click="mainStore.saveClass(savingClassKey, mainStore.students)">Sauvegarder</button>
-    
+        <label for="save-class-name">Nom de la classe à sauvegarder :</label>
+        <input type="text" id="save-class-name" v-model="savingClassKey" placeholder="Nom de la classe" style="max-width: 125px;"/>
+        <button @click="mainStore.saveClass(savingClassKey, mainStore.students)" name="Sauvegarder" data-tooltip="Savegarder la classe en choisisant un nom, ou modifier une classe existante">Sauvegarder</button>
     </fieldset>
 </template>

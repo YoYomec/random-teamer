@@ -6,4 +6,23 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: var(--spacing);
+    border-radius: .5rem;
 }
+
+body {
+    max-width: 85ch;
+}
+/*
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    content: attr(data-tooltip);
+    transform: translateX(-50%);
+}
+*/
